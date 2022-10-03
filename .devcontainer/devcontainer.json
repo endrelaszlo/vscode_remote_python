@@ -1,0 +1,42 @@
+{
+	"name": "PythonContainer",
+	"build": { 
+		"context": ".",
+		"dockerfile": "Dockerfile"
+	},
+	"runArgs": [
+		"--network=host",
+		"--env-file", ".devcontainer/devcontainer.env",
+		//"--volume", "$HOME/.Xauthority:/root/.Xauthority:rw", 
+		"--volume", "/tmp/.X11-unix:/tmp/.X11-unix"
+	],
+	"containerEnv": {
+		// "DISPLAY": "${localEnv:DISPLAY}",
+		"LIBGL_ALWAYS_SOFTWARE": "1" // https://superuser.com/questions/1072651/visual-studio-code-is-always-on-top-in-linux
+	},
+	"settings": {
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"terminal.integrated.inheritEnv": false,
+		"jupyter.experiments.optOutFrom": ["NativeNotebookEditor"],
+		"jupyter.alwaysTrustNotebooks": true, 
+		"terminal.integrated.profiles.linux": {
+			"zsh (login)": {
+			  "path": "zsh",
+			  "args": ["-l"]
+			}
+		},
+		"terminal.integrated.defaultProfile.linux": "zsh (login)",
+		"terminal.integrated.cwd": "${workspaceFolder}"
+	},
+	"extensions": [
+		"ms-python.python",
+		"mikestead.dotenv",
+		"visualstudioexptteam.vscodeint",
+		"ms-python.vscode-pylance",
+		"ms-toolsai.jupyter",
+		"tabnine.tabnine-vscode",
+		"eamodio.gitlens",
+		"magicstack.magicpython"
+	]
+}
