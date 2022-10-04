@@ -1,21 +1,20 @@
-name: base
+name: custom
 channels:
   - defaults
   - conda-forge
 dependencies:
-#  - python=3.10
- - sqlalchemy
- - conda-forge::opencv
- - seaborn
- - matplotlib
- - numpy
- - pandas
- - scipy
- - scikit-learn
- - jupyterlab
- - plotly
- - tqdm
- - pip
- - pip:
-   - pytube
-   - ffmpeg-python
+  - python=3.10
+    #  - conda-forge::opencv
+  - seaborn
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - jupyterlab
+  - plotly
+  - tqdm
+  - pip
+  - pip:
+    - pytube
+    - ffmpeg-python

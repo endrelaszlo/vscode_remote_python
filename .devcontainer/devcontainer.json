@@ -6,13 +6,16 @@
 	},
 	"runArgs": [
 		"--network=host",
-		"--env-file", ".devcontainer/devcontainer.env",
-		//"--volume", "$HOME/.Xauthority:/root/.Xauthority:rw", 
-		"--volume", "/tmp/.X11-unix:/tmp/.X11-unix"
+		// X11 authority for X11 forwarding 
+		"-v", "${env:HOME}/.Xauthority:/root/.Xauthority"
 	],
 	"containerEnv": {
-		// "DISPLAY": "${localEnv:DISPLAY}",
-		"LIBGL_ALWAYS_SOFTWARE": "1" // https://superuser.com/questions/1072651/visual-studio-code-is-always-on-top-in-linux
+		// Set this envvar to get X!! forwarding work
+		"DISPLAY": "localhost:11.0"
+	},
+	"remoteEnv": {
+		// Make Conda environment python available in the Terminal 
+		"PATH": "/opt/conda/envs/custom/bin:${containerEnv:PATH}"
 	},
 	"settings": {
 		"python.linting.enabled": true,

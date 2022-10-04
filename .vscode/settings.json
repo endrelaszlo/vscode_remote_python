@@ -5,15 +5,17 @@
     ],
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
+    // Needed for PyLance to find packages
     "python.analysis.extraPaths": [
-        "/opt/conda/lib/python3.9/site-packages/"
+        "/opt/conda/envs/customlib/python3.10/site-packages/"
     ],
-    // Autocomplete from ros python packages
+    // Needed for PyLance to find packages
     "python.autoComplete.extraPaths": [
-        "/opt/conda/lib/python3.9/site-packages/"
+        "/opt/conda/envs/customlib/python3.10/site-packages/"
     ],
     // Environment file lets vscode find python files within workspace
     "python.envFile": "${workspaceFolder}/.env",
-    // "python.defaultInterpreterPath": "${env:DEFAULT_INTERPRETER_PATH}",
-    "python.defaultInterpreterPath": "/opt/conda/bin/python3",
+    // "python.defaultInterpreterPath": "${env:PYTHON_ENV_ROOTPATH}/bin/python3",
+    // Needed for VSCode editor to find python packages
+    "python.defaultInterpreterPath": "/opt/conda/envs/custom/bin/python3",
 }
