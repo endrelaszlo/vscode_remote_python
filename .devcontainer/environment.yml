@@ -3,8 +3,8 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.10
-    #  - conda-forge::opencv
+  - python=3.9
+  # - conda-forge::opencv
   - seaborn
   - matplotlib
   - numpy
@@ -18,3 +18,4 @@ dependencies:
   - pip:
     - pytube
     - ffmpeg-python
+    - open3d
