@@ -1,17 +1,17 @@
-name: custom
+name: base
 channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.9
+  #- python=3.9
   # - conda-forge::opencv
   - seaborn
-  - matplotlib
   - numpy
   - pandas
   - scipy
   - scikit-learn
   - jupyterlab
+  - matplotlib
   - plotly
   - tqdm
   - pip
@@ -19,3 +19,4 @@ dependencies:
     - pytube
     - ffmpeg-python
     - open3d
+    - opencv-python

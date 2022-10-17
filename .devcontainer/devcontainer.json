@@ -6,15 +6,18 @@
 	},
 	"runArgs": [
 		"--network=host",
+		//"--gpus", "all",
 		// X11 authority for X11 forwarding 
 		"-v", "${env:HOME}/.Xauthority:/root/.Xauthority"
 	],
 	"containerEnv": {
 		// Set this envvar to get X!! forwarding work
-		"DISPLAY": "localhost:11.0"
+		"DISPLAY": "localhost:11.0",
+		"LIBGL_ALWAYS_SOFTWARE": "1" // Needed for software rendering of opengl
 	},
 	"remoteEnv": {
 		// Make Conda environment python available in the Terminal 
+		// "PATH": "/opt/conda/envs/custom/bin:${containerEnv:PATH}"
 		"PATH": "/opt/conda/envs/custom/bin:${containerEnv:PATH}"
 	},
 	"settings": {
